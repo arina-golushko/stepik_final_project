@@ -8,12 +8,12 @@ class ProductPage(BasePage):
 
     def should_be_product_in_cart_message(self):
         assert self.is_text_in_element_present(*ProductPageLocators.PRODUCT_NAME) == \
-        self.is_text_present(*ProductPageLocators.PRODUCT_NAME_IN_ADDED_TO_CART_MESSAGE),\
+        self.is_text_in_element_present(*ProductPageLocators.PRODUCT_NAME_IN_ADDED_TO_CART_MESSAGE),\
         "Name of added product in confirmation message doesn't correspond to product's name"
 
     def should_be_price_message(self):
         assert self.is_text_in_element_present(*ProductPageLocators.PRODUCT_PRICE) == \
-        self.is_text_present(*ProductPageLocators.PRODUCT_PRICE_IN_CART_PRICE_MESSAGE),\
+        self.is_text_in_element_present(*ProductPageLocators.PRODUCT_PRICE_IN_CART_PRICE_MESSAGE),\
         "Price of added product doesn't correspond to product's price"
 
     def should_not_be_success_message(self):
